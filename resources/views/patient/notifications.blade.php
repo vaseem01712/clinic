@@ -1,0 +1,4 @@
+<x-portal-shell title="Notifications">
+<div class="mb-7"><span class="section-label">NOTIFICATIONS</span><h1 class="section-heading !mt-3 !text-4xl">Your updates</h1></div>
+<div class="soft-panel divide-y divide-slate-100">@forelse($notifications as $n)<div class="flex items-start justify-between gap-5 p-5 {{!$n->read_at?'bg-primary-50/40':''}}"><div><p class="font-extrabold text-navy-900">{{$n->title}}</p><p class="mt-1 text-sm text-slate-500">{{$n->message}}</p><p class="mt-2 text-xs font-semibold text-slate-400">{{$n->created_at->format('d M Y, H:i')}}</p></div>@if(!$n->read_at)<form method="POST" action="{{route('patient.notifications.read',$n)}}">@csrf<button class="text-xs font-extrabold text-primary-700">Mark read</button></form>@endif</div>@empty<div class="p-14 text-center text-slate-500">No notifications.</div>@endforelse</div><div class="mt-5">{{$notifications->links()}}</div>
+</x-portal-shell>

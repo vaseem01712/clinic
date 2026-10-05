@@ -1,0 +1,24 @@
+<?php if (isset($component)) { $__componentOriginalc0848eaf28452caa8d672e14d7fde2bc = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalc0848eaf28452caa8d672e14d7fde2bc = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.portal-shell','data' => ['title' => 'Appointments']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('portal-shell'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['title' => 'Appointments']); ?>
+<div class="mb-7"><span class="section-label">APPOINTMENTS</span><h1 class="section-heading !mt-3 !text-4xl">Your schedule</h1><p class="mt-3 text-slate-500">Today's, upcoming and historical appointments for your practice.</p></div>
+<form class="mb-5 grid gap-3 sm:grid-cols-[1fr_180px_140px_auto]"><input name="q" value="<?php echo e(request('q')); ?>" class="input-field" placeholder="Search patient"><select name="status" class="input-field"><option value="">All statuses</option><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = ['pending','confirmed','completed','cancelled']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><option value="<?php echo e($s); ?>" <?php if(request('status')===$s): echo 'selected'; endif; ?>><?php echo e(ucfirst($s)); ?></option><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?></select><input name="date" value="<?php echo e(request('date')); ?>" type="date" class="input-field"><button class="btn-primary">Filter</button></form>
+<div class="soft-panel overflow-hidden"><div class="overflow-x-auto"><table class="w-full text-left text-sm"><thead class="bg-slate-50 text-xs font-extrabold uppercase text-slate-400"><tr><th class="px-5 py-4">Patient</th><th class="px-5 py-4">Date / time</th><th class="px-5 py-4">Status</th><th class="px-5 py-4"></th></tr></thead><tbody class="divide-y divide-slate-100"><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__empty_1 = true; $__currentLoopData = $appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?><tr><td class="px-5 py-5 font-bold"><?php echo e($a->patient?->name ?? $a->patient_name); ?></td><td class="px-5 py-5"><?php echo e($a->appointment_date->format('d M Y')); ?> · <?php echo e(substr($a->appointment_time,0,5)); ?></td><td class="px-5 py-5"><?php echo e(ucfirst($a->status)); ?></td><td class="px-5 py-5 text-right"><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($a->patient): ?><a class="font-bold text-primary-700" href="<?php echo e(route('doctor.patient.show',$a->patient)); ?>">Patient →</a><?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?></td></tr><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?><tr><td colspan="4" class="px-5 py-14 text-center text-slate-500">No appointments found.</td></tr><?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?></tbody></table></div><div class="border-t border-slate-100 p-4"><?php echo e($appointments->links()); ?></div></div>
+ <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalc0848eaf28452caa8d672e14d7fde2bc)): ?>
+<?php $attributes = $__attributesOriginalc0848eaf28452caa8d672e14d7fde2bc; ?>
+<?php unset($__attributesOriginalc0848eaf28452caa8d672e14d7fde2bc); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc0848eaf28452caa8d672e14d7fde2bc)): ?>
+<?php $component = $__componentOriginalc0848eaf28452caa8d672e14d7fde2bc; ?>
+<?php unset($__componentOriginalc0848eaf28452caa8d672e14d7fde2bc); ?>
+<?php endif; ?>
+<?php /**PATH C:\ITprojects\medicare-laravel\resources\views\doctor\appointments\index.blade.php ENDPATH**/ ?>

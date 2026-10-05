@@ -1,0 +1,53 @@
+<?php $attributes ??= new \Illuminate\View\ComponentAttributeBag;
+
+$__newAttributes = [];
+$__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames((['title' => 'Portal', 'eyebrow' => 'SECURE PORTAL']));
+
+foreach ($attributes->all() as $__key => $__value) {
+    if (in_array($__key, $__propNames)) {
+        $$__key = $$__key ?? $__value;
+    } else {
+        $__newAttributes[$__key] = $__value;
+    }
+}
+
+$attributes = new \Illuminate\View\ComponentAttributeBag($__newAttributes);
+
+unset($__propNames);
+unset($__newAttributes);
+
+foreach (array_filter((['title' => 'Portal', 'eyebrow' => 'SECURE PORTAL']), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
+    $$__key = $$__key ?? $__value;
+}
+
+$__defined_vars = get_defined_vars();
+
+foreach ($attributes->all() as $__key => $__value) {
+    if (array_key_exists($__key, $__defined_vars)) unset($$__key);
+}
+
+unset($__defined_vars, $__key, $__value); ?>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0d1731">
+  <title><?php echo e($title); ?> · The Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
+  <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+  <?php ($firebaseConfig = ['apiKey'=>config('services.firebase.web_api_key'),'authDomain'=>config('services.firebase.web_auth_domain'),'projectId'=>config('services.firebase.project_id'),'storageBucket'=>config('services.firebase.web_storage_bucket'),'messagingSenderId'=>config('services.firebase.web_sender_id'),'appId'=>config('services.firebase.web_app_id'),'vapidKey'=>config('services.firebase.web_vapid_key'),'subscriptionUrl'=>route('push-subscriptions.store')]); ?>
+  <script>window.clinicFirebase = <?php echo json_encode($firebaseConfig, 15, 512) ?>;</script>
+  <style>
+    :root{--portal-navy:#0d1731;--portal-blue:#3b82f6;--portal-violet:#8b5cf6}body{margin:0;background:#f5f8ff;color:#0f172a;font-family:Geist,"Plus Jakarta Sans",sans-serif}.portal-page{min-height:100vh;background:radial-gradient(circle at 88% 4%,rgba(59,130,246,.16),transparent 23%),radial-gradient(circle at 5% 42%,rgba(139,92,246,.11),transparent 25%),#f6f8fd}.portal-topbar{position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(226,232,240,.85);background:rgba(255,255,255,.86);backdrop-filter:blur(20px)}.portal-topbar-inner{max-width:1440px;height:78px;margin:auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}.portal-brand{display:flex;align-items:center;gap:11px;color:var(--portal-navy);font-size:20px;font-weight:800;letter-spacing:-.06em;text-decoration:none}.portal-brand i{display:grid;width:38px;height:38px;place-items:center;border-radius:13px;background:linear-gradient(135deg,var(--portal-blue),var(--portal-violet));color:#fff;font-size:21px;font-style:normal;box-shadow:0 12px 22px -12px rgba(59,130,246,.9)}.portal-brand em{font-style:normal;color:var(--portal-blue)}.portal-top-actions{display:flex;align-items:center;gap:12px}.portal-user{display:flex;align-items:center;gap:10px;padding:7px 12px 7px 8px;border:1px solid #e4ebf7;border-radius:14px;background:#fff}.portal-avatar{display:grid;width:30px;height:30px;place-items:center;border-radius:10px;background:#eaf2ff;color:#2563eb;font-size:12px;font-weight:800}.portal-user b{display:block;color:#17213a;font-size:12px}.portal-user span{display:block;margin-top:2px;color:#94a3b8;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}.portal-logout{border:1px solid #e1e8f4;border-radius:12px;background:#fff;padding:10px 13px;color:#475569;font-size:12px;font-weight:800;cursor:pointer}.portal-logout:hover{border-color:#bfdbfe;color:#2563eb}.portal-layout{max-width:1440px;margin:auto;display:grid;grid-template-columns:258px minmax(0,1fr);gap:24px;padding:27px 28px 54px}.portal-sidebar{position:sticky;top:102px;align-self:start;overflow:hidden;border:1px solid rgba(221,230,244,.9);border-radius:25px;background:rgba(255,255,255,.88);box-shadow:0 22px 60px -48px rgba(30,64,175,.6)}.portal-side-top{padding:23px 21px 18px;background:linear-gradient(135deg,#101a35,#1d3670)}.portal-side-top small{color:#b9ccff;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.portal-side-top b{display:block;margin-top:7px;color:#fff;font-size:18px;letter-spacing:-.035em}.portal-side-top p{margin:6px 0 0;color:rgba(255,255,255,.62);font-size:12px}.portal-menu{padding:13px}.portal-nav{display:flex!important;align-items:center;gap:11px;margin:3px 0;padding:12px 13px!important;border-radius:13px!important;color:#64748b!important;font-size:13px!important;font-weight:700!important;text-decoration:none!important;transition:.2s ease}.portal-nav:before{display:grid;width:25px;height:25px;place-items:center;border-radius:8px;background:#f1f5f9;color:#64748b;font-size:13px}.portal-nav:nth-child(1):before{content:"⌂"}.portal-nav:nth-child(2):before{content:"◷"}.portal-nav:nth-child(3):before{content:"◫"}.portal-nav:nth-child(4):before{content:"✦"}.portal-nav:nth-child(5):before{content:"⚙"}.portal-nav:hover{background:#f6f9ff!important;color:#2563eb!important}.portal-nav.active{background:linear-gradient(90deg,#eaf2ff,#f3efff)!important;color:#2563eb!important}.portal-nav.active:before{background:#2563eb;color:#fff}.portal-side-help{margin:11px;padding:16px;border-radius:17px;background:#f4f7ff}.portal-side-help b{display:block;color:#1e3a6d;font-size:12px}.portal-side-help span{display:block;margin-top:5px;color:#64748b;font-size:11px;line-height:1.45}.portal-main{min-width:0}.portal-main:before{content:"<?php echo e($eyebrow); ?>";display:inline-flex;margin-bottom:9px;color:#2563eb;font-size:10px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}.portal-alert{margin-bottom:19px;padding:14px 17px;border:1px solid #bbf7d0;border-radius:16px;background:#f0fdf4;color:#15803d;font-size:13px;font-weight:700}@media(max-width:900px){.portal-topbar-inner,.portal-layout{padding-left:16px;padding-right:16px}.portal-layout{display:block;padding-top:18px}.portal-sidebar{position:static;display:block;margin-bottom:19px;border-radius:19px}.portal-side-top{display:none}.portal-menu{display:flex;gap:5px;overflow:auto;padding:8px}.portal-nav{white-space:nowrap;padding:10px 12px!important}.portal-side-help{display:none}.portal-user span{display:none}.portal-user{padding-right:8px}.portal-logout{padding:9px 11px}}@media(max-width:540px){.portal-topbar-inner{height:68px;padding:0 12px}.portal-brand{font-size:18px}.portal-brand i{width:34px;height:34px}.portal-user b{display:none}.portal-layout{padding:16px 12px 35px}.portal-main:before{margin-left:4px}}
+  </style>
+</head>
+<body>
+<?php ($portalUser = auth()->user()); ?>
+<div class="portal-page">
+  <header class="portal-topbar"><div class="portal-topbar-inner"><a class="portal-brand" href="<?php echo e($portalUser->isDoctor() ? route('doctor.dashboard') : route('dashboard')); ?>"><i>+</i><span>the<em>clinic</em></span></a><div class="portal-top-actions"><div class="portal-user"><span class="portal-avatar"><?php echo e(strtoupper(mb_substr($portalUser->name, 0, 1))); ?></span><div><b><?php echo e($portalUser->name); ?></b><span><?php echo e($portalUser->isDoctor() ? 'Clinical portal' : 'Patient portal'); ?></span></div></div><form method="POST" action="<?php echo e($portalUser->isDoctor() ? route('doctor.logout') : route('logout')); ?>"><?php echo csrf_field(); ?><button class="portal-logout">Sign out</button></form></div></div></header>
+  <div class="portal-layout"><aside class="portal-sidebar"><div class="portal-side-top"><small><?php echo e($portalUser->isDoctor() ? 'Clinical workspace' : 'Your health space'); ?></small><b><?php echo e($portalUser->isDoctor() ? 'Doctor Portal' : 'Patient Portal'); ?></b><p><?php echo e($portalUser->isDoctor() ? 'Care delivery, organized.' : 'Care that stays connected.'); ?></p></div><nav class="portal-menu"><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($portalUser->isDoctor()): ?><a href="<?php echo e(route('doctor.dashboard')); ?>" class="portal-nav <?php echo e(request()->routeIs('doctor.dashboard')?'active':''); ?>">Overview</a><a href="<?php echo e(route('doctor.appointments')); ?>" class="portal-nav <?php echo e(request()->routeIs('doctor.appointments')?'active':''); ?>">Appointments</a><a href="<?php echo e(route('doctor.patients')); ?>" class="portal-nav <?php echo e(request()->routeIs('doctor.patients*')?'active':''); ?>">Patients</a><a href="<?php echo e(route('doctor.reports')); ?>" class="portal-nav <?php echo e(request()->routeIs('doctor.reports*')?'active':''); ?>">Medical Reports</a><a href="<?php echo e(route('doctor.profile')); ?>" class="portal-nav <?php echo e(request()->routeIs('doctor.profile*')?'active':''); ?>">Profile</a><?php else: ?><a href="<?php echo e(route('dashboard')); ?>" class="portal-nav <?php echo e(request()->routeIs('dashboard')?'active':''); ?>">Overview</a><a href="<?php echo e(route('appointments.create')); ?>" class="portal-nav">Book Appointment</a><a href="<?php echo e(route('patient.reports')); ?>" class="portal-nav <?php echo e(request()->routeIs('patient.reports')?'active':''); ?>">Medical Reports</a><a href="<?php echo e(route('patient.notifications')); ?>" class="portal-nav <?php echo e(request()->routeIs('patient.notifications')?'active':''); ?>">Notifications</a><?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?></nav><div class="portal-side-help"><b>Need clinic support?</b><span>Our team is here to make the next step simple.</span></div></aside><main class="portal-main"><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(session('success')): ?><div class="portal-alert"><?php echo e(session('success')); ?></div><?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?><?php echo e($slot); ?></main></div>
+</div>
+</body>
+</html>
+<?php /**PATH C:\ITprojects\medicare-laravel\resources\views\components\portal-shell.blade.php ENDPATH**/ ?>

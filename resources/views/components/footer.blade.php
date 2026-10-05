@@ -1,0 +1,17 @@
+<footer class="relative overflow-hidden bg-[#08182f] text-white">
+  <div class="pointer-events-none absolute -right-32 top-0 h-80 w-80 rounded-full bg-primary-500/20 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-accent-500/10 blur-3xl"></div>
+  <div class="container-shell relative py-14 sm:py-20">
+    <section class="mb-16 grid gap-7 rounded-[32px] border border-white/10 bg-white/[.055] p-7 sm:p-9 lg:grid-cols-[1fr_auto] lg:items-center">
+      <div><p class="text-xs font-extrabold uppercase tracking-[.2em] text-accent-300">Your health, made simpler</p><h2 class="mt-3 max-w-xl text-2xl font-extrabold tracking-[-.04em] sm:text-3xl">Ready to take the next step?</h2><p class="mt-3 max-w-xl text-sm leading-6 text-white/60">Book a consultation with our clinic team in just a few minutes.</p></div>
+      <a href="{{ route('appointments.create') }}" class="inline-flex items-center justify-center gap-2 rounded-full bg-accent-400 px-6 py-3.5 text-sm font-extrabold text-navy-900 transition hover:-translate-y-0.5 hover:bg-accent-300">Book appointment <span>→</span></a>
+    </section>
+    <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_.8fr_.8fr_1fr]">
+      <div><a href="{{ route('home') }}" class="flex items-center gap-3"><span class="grid h-10 w-10 place-items-center rounded-2xl bg-accent-400 text-lg font-black text-navy-900">+</span><span class="text-2xl font-extrabold tracking-[-.05em]">the<span class="text-accent-300">clinic</span></span></a><p class="mt-5 max-w-xs text-sm leading-7 text-white/60">Modern, considered healthcare delivered by a small team that knows you.</p><div class="mt-6 flex gap-2"><a href="{{ route('contact') }}" class="rounded-full border border-white/10 px-4 py-2 text-xs font-bold text-white/70 transition hover:border-accent-300 hover:text-accent-300">Contact us</a><a href="{{ route('doctor.login') }}" class="rounded-full border border-white/10 px-4 py-2 text-xs font-bold text-white/70 transition hover:border-accent-300 hover:text-accent-300">Doctor portal</a></div></div>
+      <div><h3 class="text-sm font-extrabold">Explore</h3><ul class="mt-5 space-y-3 text-sm text-white/60"><li><a href="{{ route('home') }}" class="hover:text-accent-300">Home</a></li><li><a href="{{ route('doctors.index') }}" class="hover:text-accent-300">Our doctors</a></li><li><a href="{{ route('services.index') }}" class="hover:text-accent-300">Services</a></li><li><a href="{{ route('appointments.create') }}" class="hover:text-accent-300">Book appointment</a></li></ul></div>
+      <div><h3 class="text-sm font-extrabold">Patient care</h3><ul class="mt-5 space-y-3 text-sm text-white/60"><li><a href="{{ route('login') }}" class="hover:text-accent-300">Patient login</a></li><li><a href="{{ route('contact') }}" class="hover:text-accent-300">Contact & help</a></li><li><a href="{{ route('faq') }}" class="hover:text-accent-300">Common questions</a></li></ul></div>
+      <div><h3 class="text-sm font-extrabold">Visit the clinic</h3><address class="mt-5 not-italic text-sm leading-7 text-white/60">123 Health Avenue<br>New Delhi, India<br><a href="tel:+919876543210" class="font-bold text-accent-300">+91 98765 43210</a><br>Mon–Sat · 9 AM–8 PM</address></div>
+    </div>
+    <div class="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row sm:justify-between"><p>© {{ date('Y') }} theclinic. All rights reserved.</p><p>Private, secure and patient-first.</p></div>
+  </div>
+</footer>

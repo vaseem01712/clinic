@@ -1,0 +1,22 @@
+<?php if (isset($component)) { $__componentOriginal5863877a5171c196453bfa0bd807e410 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal5863877a5171c196453bfa0bd807e410 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.layouts.app','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('layouts.app'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+  <section class="page-hero min-h-[650px] py-16"><div class="container-shell grid items-stretch overflow-hidden rounded-[36px] border border-white bg-white shadow-[0_30px_100px_-45px_rgba(30,64,175,.42)] lg:grid-cols-[.9fr_1.1fr]"><div class="reveal relative overflow-hidden bg-navy-900 p-8 text-white sm:p-12"><div class="absolute -right-20 -top-16 h-64 w-64 rounded-full bg-primary-500/30 blur-3xl"></div><div class="relative"><span class="inline-flex rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[.17em] text-accent-300">Secure doctor portal</span><h1 class="mt-8 max-w-md text-4xl font-extrabold leading-tight tracking-[-.055em] sm:text-5xl">Your clinical workspace, made simpler.</h1><p class="mt-5 max-w-md leading-7 text-white/65">Manage appointments, patient information and reports from one protected workspace.</p><div class="mt-10 space-y-4 text-sm font-semibold text-white/75"><p>✓ Appointment overview</p><p>✓ Secure patient records</p><p>✓ Private clinical reports</p></div></div></div><div class="reveal reveal-delay-2 p-7 sm:p-12"><p class="text-xs font-extrabold uppercase tracking-[.17em] text-primary-600">Doctor sign in</p><h2 class="mt-2 text-3xl font-extrabold tracking-[-.05em] text-navy-900">Welcome back.</h2><p class="mt-2 text-sm leading-6 text-slate-500">Sign in with the credentials provided by your clinic administrator.</p><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(session('success')): ?><div class="mt-5 rounded-2xl bg-emerald-50 p-4 text-sm font-semibold text-emerald-700"><?php echo e(session('success')); ?></div><?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?><?php if($errors->any()): ?><div class="mt-5 rounded-2xl bg-red-50 p-4 text-sm font-semibold text-red-700"><?php echo e($errors->first()); ?></div><?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?><form method="POST" action="<?php echo e(route('doctor.login.store')); ?>" class="mt-7 space-y-5"><?php echo csrf_field(); ?><div><label class="label">Email address</label><input name="email" type="email" value="<?php echo e(old('email')); ?>" required autofocus class="input-field"></div><div><label class="label">Password</label><input name="password" type="password" required class="input-field"></div><div class="flex items-center justify-between text-sm"><label class="flex gap-2 text-slate-500"><input name="remember" type="checkbox"> Remember me</label><a class="font-bold text-primary-700" href="<?php echo e(route('password.forgot','doctor')); ?>">Forgot password?</a></div><button class="btn-primary w-full py-4">Open secure portal →</button></form></div></div></section>
+ <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal5863877a5171c196453bfa0bd807e410)): ?>
+<?php $attributes = $__attributesOriginal5863877a5171c196453bfa0bd807e410; ?>
+<?php unset($__attributesOriginal5863877a5171c196453bfa0bd807e410); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal5863877a5171c196453bfa0bd807e410)): ?>
+<?php $component = $__componentOriginal5863877a5171c196453bfa0bd807e410; ?>
+<?php unset($__componentOriginal5863877a5171c196453bfa0bd807e410); ?>
+<?php endif; ?>
+<?php /**PATH C:\ITprojects\medicare-laravel\resources\views\doctor\auth\login.blade.php ENDPATH**/ ?>
